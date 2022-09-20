@@ -45,11 +45,15 @@ body {
     background-repeat: no-repeat;
     border-radius: 20px;
     cursor: pointer;
-    filter: none;
-    transition: filter 1.2s ease-in-out;
+    transform: translateY(0);
+    filter: brightness(.9);
+    box-shadow: 0px 2px 5px 1px #006095;
+    transition: transform .9s .3s ease-in-out, filter .9s .3s ease-in-out, box-shadow .9s .3s ease-in-out;
 }
 .card:hover {
-    filter: hue-rotate(180deg);
+    transform: translateY(-3px);
+    filter: brightness(1.5);
+    box-shadow: 0px 5px 11px 2px #006095;
 }
 .card-title {
     position: absolute;
@@ -66,46 +70,42 @@ body {
 }
 .card-title--name {
     position: absolute;
-    top: 0;
     width: 100%;
     height: 40px;
     text-transform: uppercase;
     font-weight: bold;
-    transform: scaleY(1);
-    filter: opacity(1);
-    transition: top 1.2s ease-in-out, transform 1.2s ease-in-out, filter 1.2s ease-in-out;
+    transform: scaleY(1) translateY(0);
+    filter: opacity(1) hue-rotate(0deg);
+    transition: transform 1.2s ease-in-out, filter 1.2s ease-in-out;
 }
 .card:hover .card-title--name {
-    top: -20px;
-    transform: scaleY(0);
-    filter: opacity(0);
+    transform: scaleY(0) translateY(-40px);
+    filter: opacity(0) hue-rotate(120deg);
 }
 .card-title--price {
     position: absolute;
-    top: 20px;
     width: 100%;
     height: 40px;
-    transform: scaleY(0);
-    filter: opacity(0);
-    transition: top 1.2s ease-in-out, transform 1.2s ease-in-out, filter 1.2s ease-in-out;
+    transform: scaleY(0) translateY(40px); 
+    filter: opacity(0) hue-rotate(0deg);
+    transition: transform 1.2s ease-in-out, filter 1.2s ease-in-out;
 }
 .card:hover .card-title--price {
-    top: 0;
-    transform: scaleY(1);
-    filter: opacity(1);
+    transform: scaleY(1) translateY(0);
+    filter: opacity(1) hue-rotate(120deg);
 }
 
 .ball-container {
     position: absolute;
     top: 150px;
     left: 225px;
-    filter: opacity(.6);
+    filter: opacity(.6) hue-rotate(0deg);
     transform: rotate(0deg) scale(.9);
     transition: transform 1.2s ease-in-out, filter 1.2s ease-in-out;
 }
 .card:hover .ball-container {
     transform: rotate(180deg) scale(.5);
-    filter: opacity(.3);
+    filter: opacity(.3) hue-rotate(180deg);
 }
 .ball {
     position: absolute;
